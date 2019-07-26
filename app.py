@@ -1,8 +1,6 @@
 import RPi.GPIO as GPIO
 from flask import Flask, render_template, request
-import sys
 from sense_hat import SenseHat
-import time
 
 
 app = Flask(__name__) #starting flask
@@ -39,7 +37,7 @@ def index():
 	return render_template('index.html', **templateData)   #redirecting landing page to use external file and passing data to itled'  : ledSts,
               
 if __name__ == "__main__": #starts flask server on specified IP address
-   app.run(host="192.168.2.44", port=80, debug=True)
+   app.run(host="0.0.0.0", port=80, debug=True)
 
         
 
